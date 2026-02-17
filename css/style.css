@@ -3,20 +3,8 @@
 /*Write selector/rule property to add your border when
 links in the navigation are in the hover or focus state.*/
 
-nav a:hover, nav a:focus, nav{
+nav a:hover, nav a:focus{
      border: dotted 2px #800080;
-     text-align: right;
-     list-style-type: none;
-     margin-right: 20px;
-     padding: 0;
-     overflow: hidden;
-     background-color:gray;
-     top: 0;
-     display: inline-block; 
-     text-decoration: none;
-     position: fixed; 
-     width: 100%;
-
 }   
 li{
      display: inline-block;
@@ -43,7 +31,7 @@ li{
 }
 
 /*Write selector/rule property to style the container */
-#main{
+.container{
      display: grid;
      grid-template-columns: repeat(5, 1fr);
      gap: 13px;
@@ -54,132 +42,100 @@ li{
      background-image: url("../images/header.jpg");
      grid-column: 1 / -1;
      background-repeat: no-repeat;
-     margin-top: 100px;
-     height: 100%;
+     
 }
 
-     /* width: 100%;
-     height: 100%; */
-
-.overview h1{
-     text-align: center;
-     color: white;
-}
-.overview p{
-     color: white;
-     font-size: x-large;
-}
 /* Steps 6 and 7: Write the selector/rule properties to  place the next five elements in the next
  five rows in the grid. */
 
 .accounts,.onlinebanking, .security, .loans,.contact {
      grid-column: 2 /span 3;
-     grid-row: 2;
-     width: 100% ;
-     height: 100%;
+     overflow-y: auto;
 }
 .accounts-image,.onlinebanking-image, .security-image, .loans-image, .contact-image{
      grid-column: 1 / -1;
-     height: 675px;
-     width: 100% ;
-     height: 100%;
-     grid-row: 2;
+     max-height: 675px;
      grid-row-start: 2;
-	grid-row-end: 2;
+	grid-row-end: 3;
 }
 .accounts{
      border: 10px solid black;
      background-color: white;
-     grid-row: 2;
      grid-row-start: 2;
-	grid-row-end: 2
+	grid-row-end: 3;
 }
 .onlinebanking, .onlinebanking-image{
-
-     grid-row: 3;
+     grid-row-start: 3;
+     grid-row-end: 4;
 }
 .security, .security-image{
-     
-     grid-row: 4;
+    grid-row-start: 4;
+	grid-row-end: 5;
 }
 .loans, .loans-image{
-   
-     grid-row: 5;
+grid-row-start: 5;
+	grid-row-end: 6;
 }
 .contact, .contact-image{
-     grid-row: 6;
+     grid-row-start: 6;
+	grid-row-end: 7;
 }
 
 img{
-     width: 80%;
-     block-size: 100%;
-     background-color: grey;
-     
+     width: 100%;
+     height: 100%;     
 }
 
       /*This will be a lot of rules.... but be strategic and combine selectors*/
 
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
-text-block{
-     display: grid;
-     width: 300px;
-     padding: 50px;
+.text-block{
      text-align: center;
-     vertical-align: auto;
-     border: 2 px solid black;
-     place-items: center;
-     text-align: center;
-     background-color: white;
+     align-self: center;
 }
-text-block ul{
+.text-block ul{
      text-align: left;
 }
 
 /* Add your media query here */
 @media screen and (min-width: 825px){
 
+  /* Step 10: Write the selector/rule property to style the nav element */
+
 nav{
      text-align: right;  
      padding: 35px 0px 35px 0px
-}
-     
-
-
-  /* Step 10: Write the selector/rule property to style the nav element */
-
- 
+} 
   /* Step 11: Write the selector/rule property to update the .container class */
 .container{
           display: grid;
           grid-template-columns: repeat(7, 1fr);
-          background-color: grey;
-     }
+          align-items: center;
+          align-content: center;
+}
 
   /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
  .accounts, .security, .contact{
      grid-column: 4 / span 3;
-     background-color: grey;
- }
+}
 
 .accounts-image, .security-image, .contact-image{
      grid-column: 1 / span 5;
-     background-color: grey;
+}
+.onlinebanking, .loans{
+     grid-column: 2 / span 3;
      
 }
-
-.onlinebanking, .loans-.loans-image{
-     grid-column: 3 / span 5;
-     background-color: grey;
-     
-}
+.onlinebanking-image, .loans-image{
+      grid-column: 3 / span 5;
 
 }
+
  /* Step 16:Write the selector/rule property to update the .text-block class */
 .text-block{
 max-height: 235px;
 border: 10px solid black;
 background-color: rgba(255, 255, 255, 0.7)
-     
-
+}
 }
