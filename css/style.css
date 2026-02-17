@@ -8,7 +8,9 @@ nav a:hover, nav a:focus{
 }   
 li{
      display: inline-block;
+     display: list-item;
      color: black;
+     
 }
      /* desktop view >825px 
      padding: 35px 0px 35px 0px; */
@@ -96,6 +98,8 @@ img{
 }
 .text-block ul{
      text-align: left;
+     list-style: disc;
+     
 }
 
 /* Add your media query here */
